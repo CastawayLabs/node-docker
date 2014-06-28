@@ -22,4 +22,4 @@ ADD run_app.sh /etc/service/node_app/run
 RUN mkdir -p /root/.ssh
 ADD ssh_config /root/.ssh/config
 
-CMD ["/sbin/my_init", "--stderr"]
+CMD ["/sbin/my_init"]
