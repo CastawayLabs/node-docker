@@ -3,4 +3,4 @@
 cd /srv/app
 npm install
 
-npm start
+npm start 2>&1
