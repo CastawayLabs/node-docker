@@ -1,9 +1,6 @@
-FROM ubuntu:latest
+FROM dockerfile/nodejs
 
 ENV HOME /root
-
-RUN apt-get update
-RUN apt-get install -y git nodejs npm openssl
 
 EXPOSE 80
 
