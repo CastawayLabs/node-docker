@@ -6,7 +6,10 @@ if [ $? -ne 0 ]; then
   exit 3
 fi
 
-npm install
+# Set root permissions
+chown -R root:root .
+
+npm install --unsafe-perm
 if [ $? -ne 0 ]; then
   echo npm failed to install
   exit 2
