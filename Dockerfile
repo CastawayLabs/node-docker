@@ -1,4 +1,20 @@
-FROM dockerfile/nodejs
+FROM dockerfile/python
+
+RUN apt-get update
+RUN apt-get install openssl
+
+# From dockerfile/nodejs
+# Compile Node.js
+RUN \
+  cd /tmp && \
+  curl -L https://github.com/joyent/node/archive/v0.11.13.tar.gz | tar xzf - && \
+  cd node-v* && \
+  ./configure && \
+  CXX="g++ -Wno-unused-local-typedefs" make && \
+  CXX="g++ -Wno-unused-local-typedefs" make install && \
+  cd /tmp && \
+  rm -rf /tmp/node-v* && \
+  echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
 
 ENV HOME /root
 
