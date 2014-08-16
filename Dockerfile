@@ -8,12 +8,12 @@ RUN apt-get install -y openssl
 RUN \
   cd /tmp && \
   curl -L https://github.com/joyent/node/archive/v0.11.13.tar.gz | tar xzf - && \
-  cd node-v* && \
+  cd node-* && \
   ./configure && \
   CXX="g++ -Wno-unused-local-typedefs" make && \
   CXX="g++ -Wno-unused-local-typedefs" make install && \
   cd /tmp && \
-  rm -rf /tmp/node-v* && \
+  rm -rf /tmp/node-* && \
   echo '\n# Node.js\nexport PATH="node_modules/.bin:$PATH"' >> /root/.bash_profile
 
 ENV HOME /root
