@@ -1,7 +1,7 @@
 FROM dockerfile/python
 
 RUN apt-get update
-RUN apt-get install openssl
+RUN apt-get install -y openssl
 
 # From dockerfile/nodejs
 # Compile Node.js
