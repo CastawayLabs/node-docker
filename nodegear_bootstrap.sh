@@ -18,7 +18,7 @@ fi
 if [ ! -z "$NODEMON" ]
 then
   npm install -g nodemon
-  nodemon -x "npm start"
+  nodemon -i node_modules/ -x "npm start"
   
   return 0
 fi
