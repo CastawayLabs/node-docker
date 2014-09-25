@@ -15,6 +15,14 @@ if [ $? -ne 0 ]; then
   exit 2
 fi
 
+if [ ! -z "$NODEMON" ]
+then
+  npm install -g nodemon
+  nodemon -x "npm start"
+  
+  return 0
+fi
+
 npm start 2>&1
 if [ $? -ne 0 ]; then
   echo App Quit
