@@ -7,7 +7,7 @@ RUN apt-get install -y openssl
 # Compile Node.js
 RUN \
   cd /tmp && \
-  curl -L https://github.com/joyent/node/archive/v0.11.13.tar.gz | tar xzf - && \
+  curl -L https://github.com/joyent/node/archive/v0.11.14.tar.gz | tar xzf - && \
   cd node-* && \
   ./configure && \
   CXX="g++ -Wno-unused-local-typedefs" make && \
